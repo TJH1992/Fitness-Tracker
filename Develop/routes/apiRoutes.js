@@ -1,8 +1,8 @@
 const router = require("express").Router();
-const Transaction = require("../models/workout.js");
+const Workout = require("../models/workout.js");
 
-router.get("/api/workouts", (req, res) => {
-  Workouts.create({})
+router.post("/api/workouts", (req, res) => {
+  Workout.create({})
     .then(dbWorkout => {
       res.json(dbWorkout);
     })
@@ -11,8 +11,13 @@ router.get("/api/workouts", (req, res) => {
     });
 });
 
-router.post("/api/workouts/:id", (req, res) => {
-  Workout.findByIdAndUpdate(req.params.id, {excerises: req.body})
+router.put("/api/workouts/:id", (req, res) => {
+  Workout.findByIdAndUpdate(req.params.id, { $push: {excerises: req.body} },
+    {
+      new: true,
+      runValidators: true
+    }
+    )
     .then(dbWorkout => {
       res.json(dbWorkout);
     })
@@ -22,7 +27,7 @@ router.post("/api/workouts/:id", (req, res) => {
 });
 
 router.get("/api/workouts", (req, res) => {
-  Workout.aggreate([
+  Workout.aggregate([
       {
         $addFields: {
             totalDuration: {
@@ -40,7 +45,7 @@ router.get("/api/workouts", (req, res) => {
 });
 
 router.get("/api/workouts/range", (req, res) => {
-    Workout.aggreate([
+    Workout.aggregate([
         {
           $addFields: {
               totalDuration: {
@@ -48,7 +53,7 @@ router.get("/api/workouts/range", (req, res) => {
               }
           }
         }
-      ]).sort({id: -1}).limit(10)
+      ]).sort({_id: -1}).limit(7)
       .then(dbWorkout => {
         res.json(dbWorkout);
       })

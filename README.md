@@ -11,42 +11,27 @@ Fitness Tracker
 
 ## Table of Contents
 
-- [Fitness Tracker](#Fitness Tracker)
-        - [Version 1.0](#version-10)
+- [Version 1.0](#version-10)
   - [Table of Contents](#table-of-contents)
     - [Project Description](#project-description)
       - [User Story](#user-story)
       - [Project Links](#project-links)
-    - [Installation](#installation)
-    - [Usage](#usage)
     - [Collaborators](#collaborators)
-    - [Credits](#credits)
-    - [Command to Test](#command-to-test)
     - [License](#license)
 
 ### Project Description
-
+A fitness tracker that allows the user to tracker daily workouts.
 
 
 #### User Story
 
-As a pet adoption agency
-I want an app that will help potential adopters to find loveable pets
-so that they can take them home forever!
+As a user, I want to be able to view create and track daily workouts. I want to be able to log multiple exercises in a workout on a given day. I should also be able to track the name, type, weight, sets, reps, and duration of exercise. If the exercise is a cardio exercise, I should be able to track my distance traveled.
 
 #### Project Links
 
 [GitHub Repo](https://github.com/TJH1992/Project-2.git)<br>
 
-![Demo GIF]()<br>
-
-### Installation
-
-As a user, I want to be able to view create and track daily workouts. I want to be able to log multiple exercises in a workout on a given day. I should also be able to track the name, type, weight, sets, reps, and duration of exercise. If the exercise is a cardio exercise, I should be able to track my distance traveled.
-
-### Usage
-
-
+[Heroku](https://murmuring-mountain-96213.herokuapp.com/)<br>
 
 ### Collaborators
 
